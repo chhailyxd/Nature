@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.title {
+    text-align: center;
+    padding: 10px;
+    font-weight: 800;
+    filter: drop-shadow(0 0 2em black);
+}
+.text {
+    padding: 40px;
+    text-align: justify;
+}

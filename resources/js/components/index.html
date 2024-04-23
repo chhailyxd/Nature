@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./main.js"></script>
+        <style>
+            .custom-select {
+                position: relative;
+                width: 200px;
+            }
+
+            .select-styled {
+                background-color: #fff;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                padding: 5px;
+            }
+
+            .select-options {
+                display: none;
+                list-style: none;
+                padding: 0;
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .select-options li {
+                padding: 5px;
+            }
+
+            .select-options li:hover {
+                background-color: #f4f4f4;
+            }
+
+            select {
+                width: 300px !important;
+                padding: 8px;
+                border: none !important;
+                outline: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="custom-select">
+            <select id="select">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+            </select>
+            <div class="select-styled">Select an option</div>
+            <ul class="select-options">
+                <li data-value="option1">Option 1</li>
+                <li data-value="option2">Option 2</li>
+                <li data-value="option3">Option 3</li>
+                <li data-value="option4">Option 4</li>
+            </ul>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                var $select = $("#select");
+                var $selectStyled = $(".select-styled");
+                var $selectOptions = $(".select-options");
+
+                $selectStyled.on("click", function () {
+                    $selectOptions.toggle();
+                });
+
+                $selectOptions.on("click", "li", function () {
+                    var value = $(this).data("value");
+                    $select.val(value);
+                    $selectStyled.text($(this).text());
+                    $selectOptions.hide();
+                });
+
+                $(document).on("click", function (event) {
+                    if (!$(event.target).closest(".custom-select").length) {
+                        $selectOptions.hide();
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

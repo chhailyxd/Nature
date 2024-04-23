@@ -1,0 +1,46 @@
+:root {
+    --df-t: 16px;
+    --sm-t: 18px;
+    --md-t: 24px;
+    --lg-t: 28px;
+    --xl-t: 32px;
+
+    --df-p: 16px;
+    --sm-p: 14px;
+    --md-p: 18px;
+    --lg-p: 22px;
+    --xl-p: 26px;
+}
+
+.cm-fs-t-df {
+    font-size: var(--df-t);
+}
+
+.cm-fs-t-sm {
+    font-size: var(--sm-t);
+}
+.cm-fs-t-md {
+    font-size: var(--md-t);
+}
+.cm-fs-t-lg {
+    font-size: var(--lg-t);
+}
+.cm-fs-t-xl {
+    font-size: var(--xl-t);
+}
+
+.cm-fs-p-df {
+    font-size: var(--df-p);
+}
+.cm-fs-p-sm {
+    font-size: var(--sm-p);
+}
+.cm-fs-p-md {
+    font-size: var(--md-p);
+}
+.cm-fs-p-lg {
+    font-size: var(--lg-p);
+}
+.cm-fs-p-xl {
+    font-size: var(--xl-p);
+}
